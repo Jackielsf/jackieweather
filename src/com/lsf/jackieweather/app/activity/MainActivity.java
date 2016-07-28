@@ -1,4 +1,7 @@
-package com.lsf.jackieweather.app;
+package com.lsf.jackieweather.app.activity;
+
+import com.lsf.jackieweather.app.R;
+import com.lsf.jackieweather.app.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;
