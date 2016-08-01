@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import android.util.Log;
+
 public class HttpUtil {
 
 	public static void sendHttpRequest(final String address,
@@ -24,6 +26,7 @@ public class HttpUtil {
 					BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 					StringBuffer response = new StringBuffer();
 					String line;
+
 					while((line = reader.readLine()) != null){
 						response.append(line);
 					}
@@ -31,6 +34,7 @@ public class HttpUtil {
 						listener.onFinish(response.toString());
 					}
 				} catch (Exception e){
+					e.printStackTrace();
 					if(listener != null){
 						listener.onError(e);
 					}
