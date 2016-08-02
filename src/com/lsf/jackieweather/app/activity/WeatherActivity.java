@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -15,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.lsf.jackieweather.app.R;
+import com.lsf.jackieweather.app.service.AutoUpdateService;
 import com.lsf.jackieweather.app.util.HttpCallbackListener;
 import com.lsf.jackieweather.app.util.HttpUtil;
 import com.lsf.jackieweather.app.util.Utility;
@@ -135,6 +135,8 @@ public class WeatherActivity extends Activity implements OnClickListener{
 		currentDateText.setText(prefs.getString("current_date", ""));
 		weatherInfoLayout.setVisibility(View.VISIBLE);
 		cityNameText.setVisibility(View.VISIBLE);
+		Intent intent = new Intent(this, AutoUpdateService.class);
+		startService(intent);
 	}
 	
 //	@Override

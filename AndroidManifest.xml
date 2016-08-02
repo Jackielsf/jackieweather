@@ -25,6 +25,10 @@
             </intent-filter>
         </activity>
         <activity android:name="com.lsf.jackieweather.app.activity.WeatherActivity"></activity>
+        
+        <service android:name="com.lsf.jackieweather.app.service.AutoUpdateService"></service>
+        
+        <receiver android:name="com.lsf.jackieweather.app.receiver.AutoUpdateReceiver"></receiver>
     </application>
 
 </manifest>
